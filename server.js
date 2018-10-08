@@ -20,6 +20,11 @@ app.get('/api/notes', (req, res) => {
     res.json(data);
   });
 
+app.get('/api/notes/:id', (req, res) =>{
+    const id= parseInt(req.params.id, 10);
+    res.json(data.find(item => item.id === id));
+});
+
 app.listen(8080, function () {
   console.info(`Server listening on 8080`);
 }).on('error', err => {
