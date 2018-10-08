@@ -16,6 +16,10 @@ const app = express();
 app.use(express.static('public'));
 /////////////////////////
 
+app.get('/api/notes', (req, res) => {
+    res.json(data);
+  });
+
 app.listen(8080, function () {
   console.info(`Server listening on 8080`);
 }).on('error', err => {
